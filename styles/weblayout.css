@@ -1,0 +1,68 @@
+/* Scheme
+
+#FFFFFA    white
+#FB8122    orange
+#ffbb61   light orange
+#d6d6d6   light grey
+#9e968b   taupe
+
+*/
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  background-color: #FFFFFA;
+  margin: 0px;
+}
+
+header {
+  background-color: #FB8122;
+  width: 100%;
+
+}
+
+#page-header {
+  text-align: center;
+  /* font-size: 6vw; */
+  margin: 0px;
+}
+
+nav {
+  background-color: #ffbb61;
+}
+
+#nav-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0px;
+  flex-flow: row;
+  padding: 0px 20px;
+}
+
+#nav-list li {
+  background-color: white;
+  border-top: groove;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+aside {
+  background-color: #d6d6d6;
+  width: 20%;
+}
+
+footer {
+  background-color: #9e968b;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}

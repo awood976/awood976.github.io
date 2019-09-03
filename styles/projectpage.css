@@ -1,0 +1,36 @@
+/* Scheme
+
+#FFFFFA    white
+#FB8122    orange
+#ffbb61   light orange
+#d6d6d6   light grey
+#9e968b   taupe
+
+*/
+
+.proj-row {
+  border-style: inset;
+  background-color: black;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  position: relative;
+  bottom: 0px;
+
+  height: 90vh;
+  max-height: 100vh;
+  align-content: center;
+}
+
+.proj-row a {
+  /* height: 10px; */
+}
+.proj-row img {
+  /* height: 10px; */
+  max-height: 40vh;
+  background-color: #FFFFFA;
+}
