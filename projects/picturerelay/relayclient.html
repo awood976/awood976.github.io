@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- site title and icon -->
+  <title>Picture Relay</title>
+  <link rel="icon" href="../../images/favicon.png"/>
+  <!-- metadata -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../../styles/weblayout.css"/>
+</head>
+
+<body class="column" onload="joingame()">
+  <!-- HEADER -->
+  <header>
+    <h1 id="page-header">Picture Relay</h1>
+  </header>
+
+  <!-- NAV BAR -->
+  <!-- <nav>
+    <ul id="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav> -->
+
+  <!-- GAME CONTENT -->
+  <div id="main-content">
+    <form autocomplete="off">
+      Room Code:<br>
+      <input type="text" name="roomcode" >
+      <!-- <input type="text" name="roomcode" value="A"> -->
+      <br>
+      User Name:<br>
+      <input type="text" name="username" >
+      <!-- <input type="text" name="username" value="Dunk accino"> -->
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      footer
+    </p>
+  </footer>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+  <script type="text/javascript">
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDgvLpPNg16dJJk9kULe8JCj6HM5NfUVIk",
+      authDomain: "telephone-game-aw.firebaseapp.com",
+      databaseURL: "https://telephone-game-aw.firebaseio.com",
+      projectId: "telephone-game-aw",
+      storageBucket: "telephone-game-aw.appspot.com",
+      messagingSenderId: "776902273114",
+      appId: "1:776902273114:web:38207e8640d1bb7d9f9063",
+      measurementId: "G-2FCZVE6V1N"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var database = firebase.database();
+  </script>
+  <script src="scripts/telephone-client.js"></script>
+</body>
+
+</html>
