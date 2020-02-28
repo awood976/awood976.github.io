@@ -1,0 +1,22 @@
+header {
+  background-color: black;
+  color: white;
+  font-family: georgia;
+}
+
+#page-header {
+  text-align: center;
+  padding: 5px;
+}
+
+body {
+  margin: 0px;
+}
+
+img {
+  filter: grayscale(100%);
+  max-height: 30vh;
+  border-style: double;
+  border-width: 10px;
+  margin: 5px;
+}
