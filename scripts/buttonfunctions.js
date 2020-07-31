@@ -7,6 +7,6 @@ function toggleRainEffect(elem) {
   if(element.classList.contains("motion-scroll")) {
     element.classList.remove("motion-scroll");
   } else {
-    element.classList.add("motion-scroll");    
+    element.classList.add("motion-scroll");
   }
 }
