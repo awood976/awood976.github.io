@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-orange.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
-</style>
-<body class="w3-light-grey" style="background-image:linear-gradient(to right,#544935,rgba(0,0,0,0),#544935),url('images/altbackground.png');">
+<head>
+  <title>A. Wood</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-orange.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/tags.css">
+  <link rel="icon"
+        type="images/png"
+        href="images/favicon-32.png">
+  <style>
+  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
+  </style>
+</head>
+<body id="backdrop" class="w3-light-grey motion-scroll" style="background-image:linear-gradient(to right,#544935,rgba(0,0,0,0),#544935),url('images/altbackground.png');">
 
 <!-- Page Container -->
-<div class="w3-content w3-margin-top w3-padding-16 w3-display-container" style="max-width:1400px;">
+<div class="w3-content w3-margin-top w3-padding-16 w3-display-container" >
 
   <!-- The Grid -->
   <div class="w3-row-padding">
@@ -34,34 +41,50 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-theme"></i>awood976@yahoo.com</p>
           <hr>
           <div class="w3-container w3-text-theme w3-center">
+            <!-- <button class="w3-button w3-black" onclick="mobileWindow()">TMP Mobile Compatibility</button> -->
             <a href="https://www.linkedin.com/in/awood976/"><i class="fa fa-linkedin w3-xxlarge w3-hover-opacity w3-margin-right w3-margin-left"></i></a>
             <a href="https://github.com/awood976/"><i class="fa fa-github w3-xxlarge w3-hover-opacity w3-margin-right w3-margin-left"></i></a>
             <a href="items/Resume.pdf"><i class="fa fa-id-card w3-xxlarge w3-hover-opacity w3-margin-right w3-margin-left"></i></a>
           </div>
           <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-theme"></i>Skills</b></p>
-          <p>Adobe Photoshop</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-theme" style="width:90%">90%</div>
-          </div>
-          <p>Photography</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-theme" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>Illustrator</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-theme" style="width:75%">75%</div>
-          </div>
-          <p>Media</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-theme" style="width:50%">50%</div>
-          </div>
+          <p class="w3-large"><b><i class="fa fa-code fa-fw w3-margin-right w3-text-theme"></i>Programming Languages</b></p>
+          <!-- <p class="w3-text-theme">Click a tag to see examples!</p> -->
+          <p><span class="w3-tag w3-round tag-language">Python</span>
+            <span class="w3-tag w3-round tag-language">Javascript</span>
+            <span class="w3-tag w3-round tag-language">HTML</span>
+            <span class="w3-tag w3-round tag-language">CSS</span>
+            <span class="w3-tag w3-round tag-language">Java</span>
+            <span class="w3-tag w3-round tag-language">SQL</span>
+          </p>
           <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-theme"></i>Languages</b></p>
+          <p class="w3-large"><b><i class="fa fa-laptop fa-fw w3-margin-right w3-text-theme"></i>Software</b></p>
+          <p class="w3-text-theme">Programming</p>
+          <p><span class="w3-tag w3-round tag-software">Git/Github</span>
+            <span class="w3-tag w3-round tag-software">Jupyter Notebooks</span>
+            <span class="w3-tag w3-round tag-software">Eclipse</span>
+            <span class="w3-tag w3-round tag-software">Atom Text Editor</span>
+            <span class="w3-tag w3-round tag-software">SQL Developer</span>
+            <span class="w3-tag w3-round tag-software">JIRA</span>
+          </p>
+          <p class="w3-text-theme">Enterprise</p>
+          <p><span class="w3-tag w3-round tag-software">Oracle E-Business Suite [EBS]</span>
+            <span class="w3-tag w3-round tag-software">Oracle Transportation Management</span>
+            <span class="w3-tag w3-round tag-software">Oracle CX Service</span>
+            <span class="w3-tag w3-round tag-software">ChangeGear (SunView)</span>
+          </p>
+          <p class="w3-text-theme">Microsoft Office Suite</p>
+          <p><span class="w3-tag w3-round tag-software">Outlook</span>
+            <span class="w3-tag w3-round tag-software">Word</span>
+            <span class="w3-tag w3-round tag-software">Excel</span>
+            <span class="w3-tag w3-round tag-software">Powerpoint</span>
+          </p>
+          <p class="w3-text-theme">Adobe Suite</p>
+          <p><span class="w3-tag w3-round tag-software">Photoshop</span>
+            <span class="w3-tag w3-round tag-software">Illustrator</span>
+            <span class="w3-tag w3-round tag-software">Premiere Pro</span>
+          </p>
+          <!-- <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-theme"></i>Languages</b></p>
           <p>English</p>
           <div class="w3-light-grey w3-round-xlarge">
             <div class="w3-round-xlarge w3-theme" style="height:24px;width:100%"></div>
@@ -74,7 +97,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
           <div class="w3-light-grey w3-round-xlarge">
             <div class="w3-round-xlarge w3-theme" style="height:24px;width:25%"></div>
           </div>
-          <br>
+          <br> -->
+
         </div>
       </div><br>
 
@@ -83,6 +107,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
 
     <!-- Right Column -->
     <div class="w3-twothird">
+    <!-- <div class="w3-third"> -->
+
+      <!-- Buttons -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-superpowers fa-fw w3-margin-right w3-xxlarge w3-text-theme"></i>Buttons <i> - try pressing one!</i></h2>
+        <div class="w3-container w3-center">
+          <button class="w3-button w3-round-large" onclick="mobileWindow()"><i class="fa fa-mobile fa-fw w3-xxlarge w3-text-theme"></i></button>
+          <button class="w3-button w3-round-large" onclick="toggleRainEffect('backdrop')"><i class="fa fa-angle-double-down fa-fw w3-xxlarge w3-text-theme"></i></button>
+          <hr>
+        </div>
+      </div>
 
       <!-- Education Section -->
       <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -102,7 +137,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Functional Analyst (I.T.)</b> - Niagara Bottling, LLC</h5>
           <h6 class="w3-text-theme"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2019 - <span class="w3-tag w3-theme w3-round">Current</span></h6>
-          <p>Supported the business by concurrently managing a wide variety of projects. Standard responsibilities included researching opportunities for change, gathering requirements, designing expandable solutions, documentation, and overseeing development, unit testing, user testing, and deployment.
+          <p>Supported the business by concurrently managing a wide variety of projects. Standard responsibilities included researching opportunities for change,
+            gathering requirements, designing expandable solutions, documentation, and overseeing development, unit testing, user testing, and deployment.
              Technologies included:<br><ul>
                <li>web development and UI enhancements</li>
                <li>enterprise application customizations (Oracle/ERP)</li>
@@ -111,6 +147,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
                <li>database querying via SQL and data visualizations</li>
                <li>etc.</li>
              </ul>
+          </p>
+          <hr>
+          <h5 class="w3-opacity"><b>Research Lead</b> - Cal Poly Pomona</h5>
+          <h6 class="w3-text-theme"><i class="fa fa-calendar fa-fw w3-margin-right"></i>November 2018 - September 2019</h6>
+          <p>Conducted research in Computer Science and Artificial Intelligence by the guidance of a staff
+            mentor. Work involved developing tools and systems for extracting data from video game footage, collecting data,
+            manipulating data, performing various regressions and other AI techniques for extracting meaning from the data,
+            and using these results to form predictive models (around 80% accurate) of player satisfaction based directly on
+            game data and player preferences and experience. All coding and data management was done in <span class="w3-tag w3-round tag-language">Python</span>.
           </p>
           <hr>
         </div>
@@ -122,19 +167,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans", sans-serif}
   <!-- End Grid -->
   </div>
 
-  <!-- End Page Container -->
+<!-- End Page Container -->
 </div>
 
 <footer class="w3-container w3-theme w3-center w3-section w3-padding-16">
-  <p style="margin:0px;">Find me on social media.</p>
-  <i class="fa fa-github w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p style="margin:0px;">Thank you for viewing!</p>
   <!-- <i class="fa fa-instagram w3-hover-opacity"></i> -->
   <!-- <i class="fa fa-snapchat w3-hover-opacity"></i> -->
   <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
   <!-- <i class="fa fa-twitter w3-hover-opacity"></i> -->
   <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p> -->
 </footer>
-
+<script src="scripts/buttonfunctions.js"></script>
 </body>
 </html>
