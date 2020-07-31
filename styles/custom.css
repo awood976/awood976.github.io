@@ -1,0 +1,34 @@
+/* LINKS */
+a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+  opacity: 80%;
+}
+
+/* TAGS */
+.tag-language {
+  background-color: #d3b375ff;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.tag-software {
+  background-color: #a89d88ff;
+  color: black;
+  margin-bottom: 5px;
+}
+
+/* ANIMATIONS */
+.motion-scroll {
+  animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+   100%{
+     /* Vertical is set to height of background image to loop */
+    background-position:0% 595px;
+  }
+}
