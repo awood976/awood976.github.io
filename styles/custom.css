@@ -37,3 +37,14 @@ a:hover, a:active {
 html,body,h1,h2,h3,h4,h5,h6 {
   font-family: "Josefin Sans", sans-serif
 }
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d3b375ff;
+}
