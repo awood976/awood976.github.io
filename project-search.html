@@ -12,6 +12,7 @@
   <link rel="icon"
         type="images/png"
         href="images/favicon-32.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body id="backdrop" class="w3-light-grey motion-scroll" style="background-image:linear-gradient(to right,#544935,rgba(0,0,0,0),#544935),url('images/altbackground.png');">
@@ -25,13 +26,13 @@
 </div>
 
 <!-- Page Container -->
-<div class="w3-content w3-padding-16 w3-display-container" style="margin-top:50px;max-width:70%;">
+<div class="w3-content w3-padding-16 w3-display-container" style="margin-top:50px;max-width:90%;">
 
   <!-- The Grid -->
   <div class="w3-row-padding">
 
     <!-- Left Column -->
-    <div class="w3-fourth">
+    <div class="w3-quarter">
 
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
@@ -46,7 +47,6 @@
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-theme"></i>awood976@yahoo.com</p>
           <hr>
           <div class="w3-container w3-text-theme w3-center">
-            <!-- <button class="w3-button w3-black" onclick="mobileWindow()">TMP Mobile Compatibility</button> -->
             <a href="https://www.linkedin.com/in/awood976/" target="_blank"><i class="fa fa-linkedin w3-xxlarge w3-hover-opacity w3-margin-right w3-margin-left"></i></a>
             <a href="https://github.com/awood976/" target="_blank"><i class="fa fa-github w3-xxlarge w3-hover-opacity w3-margin-right w3-margin-left"></i></a>
             <a href="items/Resume.pdf" target="_blank"><i class="fa fa-id-card w3-xxlarge w3-hover-opacity w3-margin-right w3-margin-left"></i></a>
@@ -76,38 +76,6 @@
             <span class="w3-tag w3-round tag-software">SQL Developer</span>
             <span class="w3-tag w3-round tag-software">JIRA</span>
           </p>
-          <p class="w3-text-theme">Enterprise</p>
-          <p><span class="w3-tag w3-round tag-software">Oracle E-Business Suite [EBS]</span>
-            <span class="w3-tag w3-round tag-software">Oracle Transportation Management</span>
-            <span class="w3-tag w3-round tag-software">Oracle CX Service</span>
-            <span class="w3-tag w3-round tag-software">ChangeGear (SunView)</span>
-          </p>
-          <p class="w3-text-theme">Microsoft Office Suite</p>
-          <p><span class="w3-tag w3-round tag-software">Outlook</span>
-            <span class="w3-tag w3-round tag-software">Word</span>
-            <span class="w3-tag w3-round tag-software">Excel</span>
-            <span class="w3-tag w3-round tag-software">Powerpoint</span>
-          </p>
-          <p class="w3-text-theme">Adobe Suite</p>
-          <p><span class="w3-tag w3-round tag-software">Photoshop</span>
-            <span class="w3-tag w3-round tag-software">Illustrator</span>
-            <span class="w3-tag w3-round tag-software">Premiere Pro</span>
-            <span class="w3-tag w3-round tag-software">After Effects</span>
-          </p>
-          <!-- <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-theme"></i>Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-theme" style="height:24px;width:100%"></div>
-          </div>
-          <p>Spanish</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-theme" style="height:24px;width:55%"></div>
-          </div>
-          <p>German</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-theme" style="height:24px;width:25%"></div>
-          </div>
-          <br> -->
 
         </div>
       </div><br>
@@ -116,7 +84,7 @@
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
+    <div id="projects-list" class="w3-threequarter w3-row" style="padding:8px;background-color:rgba(244,159,0,0.5);">
 
       <!-- Buttons -->
       <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -191,5 +159,12 @@
   <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p> -->
 </footer>
 <script src="scripts/buttonfunctions.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#projects-list").append(
+      "Working"
+    );
+  });
+</script>
 </body>
 </html>
