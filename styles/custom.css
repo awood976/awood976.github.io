@@ -21,6 +21,12 @@ a:hover, a:active {
   margin-bottom: 5px;
 }
 
+.tag-other {
+  background-color: #9f8a60ff;
+  color: black;
+  margin-bottom: 5px;
+}
+
 /* ANIMATIONS */
 .motion-scroll {
   animation: scroll 60s linear infinite;
