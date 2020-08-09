@@ -96,7 +96,7 @@
   // Populate list of projects from firebase
   db.collection("project-previews").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().tags}`);
+        // console.log(`${doc.id} => ${doc.data().tags}`);
         let name = doc.data().name;
         let image = doc.data().filename;
         let description = doc.data().description;
