@@ -53,16 +53,6 @@
     <!-- Right Column -->
     <div id="projects-list" class="w3-threequarter w3-row" style="padding:8px;background-color:rgba(244,159,0,0.5);">
 
-      <!-- Buttons -->
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-superpowers fa-fw w3-margin-right w3-xxlarge w3-text-theme"></i>Buttons <i> - try pressing one!</i></h2>
-        <div class="w3-container w3-center">
-          <button class="w3-button w3-round-large" onclick="mobileWindow()"><i class="fa fa-mobile fa-fw w3-xxlarge w3-text-theme"></i></button>
-          <button class="w3-button w3-round-large" onclick="toggleRainEffect('backdrop')"><i class="fa fa-angle-double-down fa-fw w3-xxlarge w3-text-theme"></i></button>
-          <hr>
-        </div>
-      </div>
-
     <!-- End Right Column -->
     </div>
 
@@ -84,8 +74,6 @@
 
 <!-- FIREBASE SCRIPT -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
 <script>
@@ -105,21 +93,36 @@
   firebase.analytics();
   var db = firebase.firestore();
 
+  // Populate list of projects from firebase
   db.collection("project-previews").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().tags}`);
         let name = doc.data().name;
+        let image = doc.data().filename;
+        let description = doc.data().description;
+        let tags_list = doc.data().tags;
+        let tags_html = "<hr><p>";
+        tags_list.forEach((item, i) => {
+          tags_html = tags_html + `<span class="w3-tag w3-round tag-language" style="margin:0px 3px;">${item}</span>`
+        });
+        tags_html = tags_html + "</p>"
+
         $("#projects-list").append(
-          `<div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h2 class="w3-text-grey w3-padding-16">${name}</h2>
-            <div class="w3-container w3-center">
-              <hr>
+          `<div class="w3-container w3-card w3-white w3-margin-bottom w3-center">
+            <h2 class="w3-text-grey">${name}</h2>
+            <div class="container">
+              <img class="w3-margin-bottom thumbnail-image" src="images/project-thumbnails/${image}" alt="Thumbnail"></img>
+              <div class="overlay">
+                <div class="text">${description}</div>
+              </div>
             </div>
+            ${tags_html}
           </div>`
         );
     });
-});
+  });
 </script>
+
 
 <!-- <script>
   $(document).ready(function(){
