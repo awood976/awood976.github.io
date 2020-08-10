@@ -28,9 +28,10 @@ a:hover, a:active {
 
 .thumbnail-image {
   display: block;
-  width: 100%;
+  width: 90%;
+  margin:0px 5%;
   height: auto;
-  min-height: 80px;
+  min-height: 100px;
   background: lightgrey;
 }
 .container:hover .overlay {
@@ -87,7 +88,6 @@ html,body,h1,h2,h3,h4,h5,h6 {
 }
 
 /* SCROLLBAR */
-/* width */
 ::-webkit-scrollbar {
   width: 20px;
 }
