@@ -51,7 +51,11 @@
     </div>
 
     <!-- Right Column -->
-    <div id="projects-list" class="w3-threequarter w3-row" style="padding:8px;background-color:rgba(244,159,0,0.5);">
+    <div id="projects-list" class="w3-threequarter w3-row-padding" style="padding:8px;background-color:rgba(244,159,0,0.5);">
+      <!-- <div id="projects-list-left" class="w3-col l4" style="width:50%;background-color:rgba(244,0,0,0.5);"></div> -->
+      <div id="projects-list-left" class="w3-col l4" style="width:50%;"></div>
+      <!-- <div id="projects-list-right" class="w3-col l4" style="width:50%;background-color:rgba(0,159,0,0.5);"></div> -->
+      <div id="projects-list-right" class="w3-col l4" style="width:50%;"></div>
 
     <!-- End Right Column -->
     </div>
@@ -92,23 +96,36 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   var db = firebase.firestore();
+  var project_sorter = true;
+  var column_left = "#projects-list-left";
+  var column_right = "#projects-list-right";
 
   // Populate list of projects from firebase
   db.collection("project-previews").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        // console.log(`${doc.id} => ${doc.data().tags}`);
         let name = doc.data().name;
         let image = doc.data().filename;
         let description = doc.data().description;
         let tags_list = doc.data().tags;
         let tags_html = "<hr><p>";
         tags_list.forEach((item, i) => {
-          tags_html = tags_html + `<span class="w3-tag w3-round tag-language" style="margin:0px 3px;">${item}</span>`
+          tags_html = tags_html + `<span class="w3-tag w3-round tag-language" style="margin:3px;">${item}</span>`
         });
         tags_html = tags_html + "</p>"
 
-        $("#projects-list").append(
-          `<div class="w3-container w3-card w3-white w3-margin-bottom w3-center">
+        // Sort projects into two columns
+        let column = "";
+        if (project_sorter) {
+          column = column_left;
+        } else {
+          column = column_right;
+        }
+        project_sorter = !project_sorter;
+        //calculate height
+        // $(column).append("height: " + document.getElementById(column.substring(1,column.length)).offsetHeight);
+
+        $(column).append(
+          `<div class="w3-card w3-white w3-margin-bottom w3-center" style="padding:5px 0px">
             <h2 class="w3-text-grey">${name}</h2>
             <div class="container">
               <img class="w3-margin-bottom thumbnail-image" src="images/project-thumbnails/${image}" alt="Thumbnail"></img>
