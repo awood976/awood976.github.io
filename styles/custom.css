@@ -28,11 +28,10 @@ a:hover, a:active {
 
 .thumbnail-image {
   display: block;
-  width: 90%;
-  margin:0px 5%;
-  height: auto;
-  min-height: 100px;
-  background: lightgrey;
+  background: black;
+  margin: auto;
+  max-width: 100%;
+  max-height: 20vh;
 }
 .container:hover .overlay {
   opacity: 1;
