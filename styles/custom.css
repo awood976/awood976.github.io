@@ -31,7 +31,7 @@ a:hover, a:active {
   background: black;
   margin: auto;
   max-width: 100%;
-  max-height: 20vh;
+  max-height: 30vh;
 }
 .container:hover .overlay {
   opacity: 1;
