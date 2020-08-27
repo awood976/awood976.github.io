@@ -13,6 +13,8 @@
         type="images/png"
         href="images/favicon-32.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Make link underlines grey instead of black on this page -->
+  <style>a:hover {color: grey;}</style>
 </head>
 
 <body id="backdrop" class="w3-light-grey motion-scroll" style="background-image:linear-gradient(to right,#544935,rgba(0,0,0,0),#544935),url('images/altbackground.png');">
@@ -86,9 +88,6 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   var db = firebase.firestore();
-  var project_sorter = true;
-  var column_left = "#projects-list-left";
-  var column_right = "#projects-list-right";
 
   // Populate list of projects from firebase
   db.collection("project-previews").get().then((querySnapshot) => {
@@ -97,6 +96,7 @@
         let image = doc.data().filename;
         let description = doc.data().description;
         let tags_list = doc.data().tags;
+        let projectlink = doc.data().projectlink;
         let tags_html = "<hr><p>";
         tags_list.forEach((item, i) => {
           tags_html = tags_html + `<span class="w3-tag w3-round tag-language" style="margin:3px;">${item}</span>`
@@ -104,7 +104,7 @@
         tags_html = tags_html + "</p>"
 
         $("#projects-list").append(
-          `<div class="w3-card w3-white w3-margin w3-center w3-col l3 m5 s12">
+          `<div class="w3-card w3-white w3-margin w3-center w3-col l3 s12"><a href="project.html?project=${projectlink}">
             <h3 class="w3-text-grey">${name}</h3>
             <div class="container" style="background:black;">
               <img class="w3-margin-bottom thumbnail-image" src="images/project-thumbnails/${image}" alt="Thumbnail"></img>
@@ -113,7 +113,7 @@
               </div>
             </div>
             ${tags_html}
-          </div>`
+          </a></div>`
         );
     });
   });
