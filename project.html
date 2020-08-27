@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A. Wood</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-orange.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/custom.css">
+  <link rel="icon"
+        type="images/png"
+        href="images/favicon-32.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body id="backdrop" class="w3-light-grey motion-scroll" style="background-image:linear-gradient(to right,#544935,rgba(0,0,0,0),#544935),url('images/altbackground.png');">
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-card" style="background:#a89d88ff;">
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large"><img class="w3-margin-right" src="images/favicon-16.png" style="position:relative;left:0px;top:-2px"></img>Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Projects - Coming Soon!</a>
+  </div>
+</div>
+
+<!-- Page Container -->
+<div class="w3-content w3-padding-16 w3-display-container" style="margin-top:50px;max-width:90%;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <!-- <div class="w3-quarter"> -->
+
+      <!-- <div class="w3-white w3-text-grey w3-card-4 w3-padding"> -->
+        <!-- <input class="w3-input w3-border" type="text" placeholder="Search for projects.." id="searchBar" onkeyup="searchBarFilter()"> -->
+        <!-- <div class="checkbox">
+          <label><input type="checkbox" value="">Option 1</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="">Option 2</label>
+        </div>
+        <div class="checkbox disabled">
+          <label><input type="checkbox" value="" disabled>Option 3</label>
+        </div> -->
+      <!-- </div><br> -->
+
+    <!-- End Left Column -->
+    <!-- </div> -->
+
+    <!-- Right Column -->
+    <div id="projects-list" class="w3-row w3-card w3-white" style="display:flex;flex-wrap:wrap;">
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+<!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-theme w3-center w3-section w3-padding-16">
+  <p style="margin:0px;">Thank you for viewing!</p>
+</footer>
+<script src="scripts/buttonfunctions.js"></script>
+
+<!-- FIREBASE SCRIPT -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+<script>
+  function getProjectFromQueryString() {
+    return "cuphead";
+  }
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBMwY6xtSXwU_r15uzIFgEMnZfPbVUr0vs",
+    authDomain: "awood976-portfolio.firebaseapp.com",
+    databaseURL: "https://awood976-portfolio.firebaseio.com",
+    projectId: "awood976-portfolio",
+    storageBucket: "awood976-portfolio.appspot.com",
+    messagingSenderId: "812877415325",
+    appId: "1:812877415325:web:3930097fbd482232b22574",
+    measurementId: "G-9WGR6H8HH8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var db = firebase.firestore();
+
+  // Populate list of projects from firebase
+  var docRef = db.collection("project").doc(getProjectFromQueryString());
+  docRef.get().then(function(doc) {
+    if (doc.exists) {
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+  }).catch(function(error) {
+    console.log("Error getting document:",error);
+  });
+  // db.collection("project-previews").get().then((querySnapshot) => {
+  //   querySnapshot.forEach((doc) => {
+  //       let name = doc.data().name;
+  //       let image = doc.data().filename;
+  //       let description = doc.data().description;
+  //       let tags_list = doc.data().tags;
+  //       let tags_html = "<hr><p>";
+  //       tags_list.forEach((item, i) => {
+  //         tags_html = tags_html + `<span class="w3-tag w3-round tag-language" style="margin:3px;">${item}</span>`
+  //       });
+  //       tags_html = tags_html + "</p>"
+  //
+  //       $("#projects-list").append(
+  //         `<div class="w3-card w3-white w3-margin w3-center w3-col l3 m5 s12">
+  //           <h3 class="w3-text-grey">${name}</h3>
+  //           <div class="container" style="background:black;">
+  //             <img class="w3-margin-bottom thumbnail-image" src="images/project-thumbnails/${image}" alt="Thumbnail"></img>
+  //             <div class="overlay">
+  //               <div class="text">${description}</div>
+  //             </div>
+  //           </div>
+  //           ${tags_html}
+  //         </div>`
+  //       );
+  //   });
+  // });
+</script>
+
+
+<!-- <script>
+  $(document).ready(function(){
+    $("#projects-list").append(
+      "Appended text via JQuery"
+    );
+  });
+</script> -->
+</body>
+</html>
