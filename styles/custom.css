@@ -8,6 +8,23 @@ a:hover, a:active {
   opacity: 80%;
 }
 
+/* PROJECT PAGE */
+#project-head img {
+  max-width: 100%;
+  margin-bottom: 5px;
+  background-color: lightgray;
+  border-style: solid;
+  border-color: gray;
+  border-width: medium;
+}
+
+.grey-box {
+  background-color: lightgray;
+  border-style: solid;
+  border-color: gray;
+  border-width: thick;
+}
+
 /* OVERLAY IMAGES */
 .overlay {
   position: absolute;
@@ -33,6 +50,7 @@ a:hover, a:active {
   max-width: 100%;
   max-height: 30vh;
 }
+
 .container:hover .overlay {
   opacity: 1;
 }
