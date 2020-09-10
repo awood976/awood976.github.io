@@ -34,9 +34,9 @@
       <h1 class="">Understanding Boss Battles: A Case Study of Cuphead</h1>
       <img src="images/project-thumbnails/cuphead.png"></img>
     </div>
-    <div class="w3-col m6 l8">
-      <h3>Summary</h3>
-      <p>Here is my summary of what I did for the project of Cuphead. I worked with a professor and we did some research things where we gathered data and ran regressions to predict how enjoyable a boss battle would be.</p>
+    <div class="w3-col m6 l8" style="display:flex;flex-direction:column;align-items:center;">
+      <h3 style="text-align:center;">Summary</h3>
+      <p style="width:90%;">Here is my summary of what I did for the project of Cuphead. I worked with a professor and we did some research things where we gathered data and ran regressions to predict how enjoyable a boss battle would be.</p>
     </div>
     <hr>
     <p>Here is a full detailed outline of all the things we worked on. I started with a </p>
@@ -59,7 +59,9 @@
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
 <script>
   function getProjectFromQueryString() {
-    return "cuphead";
+    let project_name = location.search.split("=")[1];
+    console.log(project_name);
+    return project_name;
   }
 
   // Your web app's Firebase configuration
