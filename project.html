@@ -30,7 +30,7 @@
 
   <!-- The Grid -->
   <div id="project-head" class="w3-row-padding w3-card w3-white w3-padding" style="display:flex;flex-wrap:wrap;">
-    <div class="w3-col m6 l4 grey-box">
+    <!-- <div class="w3-col m6 l4 grey-box">
       <h1 class="">Understanding Boss Battles: A Case Study of Cuphead</h1>
       <img src="images/project-thumbnails/cuphead.png"></img>
     </div>
@@ -39,7 +39,7 @@
       <p style="width:90%;">Here is my summary of what I did for the project of Cuphead. I worked with a professor and we did some research things where we gathered data and ran regressions to predict how enjoyable a boss battle would be.</p>
     </div>
     <hr>
-    <p>Here is a full detailed outline of all the things we worked on. I started with a </p>
+    <p>Here is a full detailed outline of all the things we worked on. I started with a </p> -->
 
 
   <!-- End Grid -->
@@ -85,9 +85,27 @@
   docRef.get().then(function(doc) {
     if (doc.exists) {
         console.log("Document data:", doc.data());
+        let title = doc.data().title;
+        let image = doc.data().filename;
+        let summary = doc.data().summary;
+        let content = doc.data().content;
+
+        $("#project-head").append(
+          `<div class="w3-col m6 l4 grey-box">
+            <h1 class="">${title}</h1>
+            <img src="images/project-thumbnails/${image}"></img>
+          </div>
+          <div class="w3-col m6 l8" style="display:flex;flex-direction:column;align-items:center;">
+            <h3 style="text-align:center;">Summary</h3>
+            <p style="width:90%;">${summary}</p>
+          </div>
+          <hr>
+          <p>${content}</p>`
+        );
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
+        $("#project-head").append('<h1 class="">ERROR: No Document Found!</h1>');
     }
   }).catch(function(error) {
     console.log("Error getting document:",error);
