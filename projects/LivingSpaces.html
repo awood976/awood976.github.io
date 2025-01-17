@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gogglebox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>
+                    <a class="logo" href="#" aria-label="Gogglebox Home">
+                        <img width="220px" height="40px" src="../images/living-spaces/2308_gogglebox_logo.png" alt="Gogglebox Logo" class="">
+                    </a>
+                </h1>
+                <a href="#">Sign In</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="hero" class="container">
+            <picture>
+                <source media="(max-width:580px)" srcset="../images/living-spaces/2308_mobile_hero.jpg">
+                <img src="../images/living-spaces/2308_desktop_hero.jpg" alt="What We Do in the Shadows. Next Episode: August 17, 2023.">
+            </picture>
+        </section>
+        <section id="now-playing" class="container">
+            <h2>Now Playing</h2>
+            <div class="row">
+                <div class="column now-playing-left">
+                    <img src="../images/living-spaces/2308_01_now_playing.jpg" alt="Only Murders in the Building">
+                </div>
+                <div class="column now-playing-right">
+                    <img src="../images/living-spaces/2308_02_now_playing.jpg" alt="Yellowjackets">
+                    <img src="../images/living-spaces/2308_03_now_playing.jpg" alt="Stranger Things 4">        
+                </div>
+            </div>
+        </section>
+        <section id="tomorrows-schedule" class="container">
+            <h2>Tomorrow's Schedule</h2>
+            <ul id="schedule-items" class="cards"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;Gogglebox 2023 All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- My Styles -->
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        background-color: #2E083D;
+        overflow-x: hidden;
+    }
+
+    nav {
+        background-color: #000;
+    }
+
+    nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5rem 4rem;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    h1, h2 {
+        margin: 0;
+    }
+
+    h2 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .container {
+        max-width: 1620px;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .now-playing-left {
+        width: calc(35% - .75rem);
+    }
+
+    .now-playing-left img {
+        height: 100%;
+    }
+
+    .now-playing-right {
+        width: calc(65% - .75rem);
+    }
+    
+    .now-playing-right img:first-child {
+        margin-bottom: 1.5rem;
+    }
+
+    #tomorrows-schedule {
+        /* Right-side fade effect */
+        --mask: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 1) 0,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0) 100%,
+            rgba(0, 0, 0, 0) 0
+        );
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+    }
+
+    #schedule-items {
+        margin: 0;
+        padding: 0 0 3rem 0;
+    }
+
+    /* Mobile Styles */
+    @media screen and (max-width: 580px) {
+        nav .container {
+            padding: .5rem 1.5rem;
+        }
+        
+        #hero {
+            padding: 15px;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .row {
+            flex-wrap: wrap;
+            gap: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .now-playing-left {
+            width: 100%;
+        }
+        
+        .now-playing-right {
+            margin: 1.5rem 0 0 0;
+            width: 100%;
+        }
+
+        #tomorrows-schedule {
+            mask: none;
+        }
+
+        #schedule-items {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<!-- Card CSS - Modified from: https://codepen.io/tutsplus/pen/XWErZwq -->
+<style>
+    .cards {
+        display: flex;
+        list-style: none;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 100%;
+        flex-basis: calc(50% - 10px);
+        margin-right: 20px;
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+        scroll-snap-align: start;
+        transition: all 0.2s;
+    }
+
+    .card:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .card:hover {
+        color: var(--white);
+        background: var(--red);
+    }
+
+    .cards::-webkit-scrollbar {
+        height: 12px;
+    }
+
+    .cards::-webkit-scrollbar-thumb,
+    .cards::-webkit-scrollbar-track {
+        border-radius: 92px;
+    }
+
+    .cards::-webkit-scrollbar-thumb {
+        background: linear-gradient(to right, #FF5C00 , #CB2DF0);
+    }
+
+    .cards::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    /* show 3 cards on tablet */
+    @media (min-width: 700px) {
+        .card {
+            flex-basis: calc(calc(100% / 3) - 20px);
+        }
+
+        .card:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    /* show 6 cards on desktop */
+    @media (min-width: 1100px) {
+        .card {
+            flex-basis: calc(calc(100% / 6) - 30px);
+        }
+
+        .card:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+</style>
+
+<script>
+    function dateTomorrow() {
+        let date = new Date(); //get current date
+        date.setDate(date.getDate() + 1); //add 1 day
+        date = date.toLocaleDateString('en-CA'); //convert to string format: 'yyyy-mm-dd'
+        return date;
+    }
+
+    $(document).ready(function(){
+
+        // Get tomorrow's schedule
+        $.ajax({url: `https://api.tvmaze.com/schedule?country=US&date=${dateTomorrow()}`, success: function(result){
+            let resultArray = result.slice(0,24) //first 24 shows
+
+            resultArray.forEach((item) => {
+                let img = item.show.image ? item.show.image.medium : '';
+                let card = `
+                    <li class="card">
+                        <img src="${img}" alt="${item.show.name}">       
+                    </li>
+                `;
+
+                $('#schedule-items').append(card);
+            });
+        }});
+
+    });
+</script>
